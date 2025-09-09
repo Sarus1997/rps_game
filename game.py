@@ -19,7 +19,7 @@ def play_game():
     for round_num in range(1, rounds + 1):
         print(f"\n--- Round {round_num} of {rounds} ---")
         print("เลือก: 1 = หิน, 2 = กระดาษ, 3 = กรรไกร")
-        user_input = input("Your choice: ")
+        user_input = input("ตัวเลือกของคุณ: ")
 
         if user_input not in choices:
             print("❌ ตัวเลือกไม่ถูกต้อง กรุณากรอก 1, 2 หรือ 3")
@@ -28,24 +28,24 @@ def play_game():
         user_choice = choices[user_input]
         computer_choice = random.choice(list(choices.values()))
 
-        print(f"You chose: {user_choice}")
-        print(f"Computer chose: {computer_choice}")
+        print(f"ตัวเลือกของคุณ: {user_choice}")
+        print(f"คอมพิวเตอร์เลือก: {computer_choice}")
 
         if user_choice == computer_choice:
-            print("🤝 It's a tie!")
+            print("🤝 เสมอกัน!")
             stats['ties'] += 1
         elif (user_choice == 'หิน' and computer_choice == 'กรรไกร') or \
              (user_choice == 'กระดาษ' and computer_choice == 'หิน') or \
              (user_choice == 'กรรไกร' and computer_choice == 'กระดาษ'):
-            print("✅ You win this round!")
+            print("✅ รอบนี้คุณชนะ!")
             user_score += 1
             stats['wins'] += 1
         else:
-            print("💻 Computer wins this round!")
+            print("💻 รอบนี้คอมพิวเตอร์ชนะ!")
             computer_score += 1
             stats['losses'] += 1
 
-        print(f"Score -> You: {user_score} | Computer: {computer_score}")
+        print(f"คะแนน -> คุณ: {user_score} | คอมพิวเตอร์: {computer_score}")
 
     stats['games_played'] += 1
     save_stats(stats)

@@ -30,19 +30,20 @@ def show_report(stats):
         print("\nยังไม่มีการเล่นเกมเลยครับ\n")
         return
 
-    print("\n=== 🎮 Rock Paper Scissors Game Report 🎮 ===")
-    print(f"Total games played: {stats['games_played']}")
+    print("\n=== 🎮 รายงานผลการเล่นเกม เป่ายิงฉุบ 🎮 ===")
+    print(f"จำนวนเกมทั้งหมด: {stats['games_played']}")
     
     # คำนวณเปอร์เซ็นต์
     win_rate = stats['wins'] / stats['games_played'] * 100
     loss_rate = stats['losses'] / stats['games_played'] * 100
     tie_rate = stats['ties'] / stats['games_played'] * 100
 
+    # ฟังก์ชันวาด bar chart แบบ text
     def bar(percent):
         total_blocks = 20
         filled_blocks = int(percent / 100 * total_blocks)
         return "█" * filled_blocks + "░" * (total_blocks - filled_blocks)
 
-    print(f"\n✅ Wins:   {stats['wins']} ({win_rate:.2f}%) {bar(win_rate)}")
-    print(f"❌ Losses: {stats['losses']} ({loss_rate:.2f}%) {bar(loss_rate)}")
-    print(f"🤝 Ties:   {stats['ties']} ({tie_rate:.2f}%) {bar(tie_rate)}\n")
+    print(f"\n✅ ชนะ:   {stats['wins']} ({win_rate:.2f}%) {bar(win_rate)}")
+    print(f"❌ แพ้:   {stats['losses']} ({loss_rate:.2f}%) {bar(loss_rate)}")
+    print(f"🤝 เสมอ:  {stats['ties']} ({tie_rate:.2f}%) {bar(tie_rate)}\n")
