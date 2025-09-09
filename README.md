@@ -15,6 +15,7 @@
 
 ## 🗂️ โครงสร้างไฟล์
 
+``` bash
 rps_game/
 │
 ├─ rps_main.py # เมนูหลัก รันโปรแกรม
@@ -22,6 +23,7 @@ rps_game/
 ├─ rps_stats.py # ฟังก์ชันจัดการสถิติ (load, save, show_report)
 └─ game_stats.csv # ไฟล์เก็บสถิติ
 
+```
 ---
 
 ## ⚡ วิธีใช้งาน
